@@ -107,5 +107,7 @@
 		/* 完全性チェック */
 		// "skipDefaultLibCheck": true,                      /* TypeScriptに同梱される.d.tsファイルの型チェックをスキップします */
 		"skipLibCheck": true /* すべての.d.tsファイルの型チェックをスキップします */
-	}
+	},
+	"include": ["**/*.ts", "**/*.js"],
+	"exclude": ["node_modules", "dist"]
 }
