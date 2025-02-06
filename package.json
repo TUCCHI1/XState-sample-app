@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"typecheck": "tsc --noEmit",
-		"dev": "vite-node index.ts"
+		"dev": "vite-node index.ts",
+		"lint": "eslint . --ext .ts,.tsx",
+		"lint:fix": "eslint . --ext .ts,.tsx --fix"
 	},
 	"keywords": [],
 	"author": "",
