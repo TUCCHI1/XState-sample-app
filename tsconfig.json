@@ -11,7 +11,7 @@
 		// "disableReferencedProjectLoad": true,             /* TypeScriptが自動的に読み込むプロジェクト数を削減します */
 
 		/* 言語と環境設定 */
-		"target": "es2016" /* 出力するJavaScriptのバージョンと互換性のある型定義を設定します */,
+		"target": "es2017" /* 出力するJavaScriptのバージョンと互換性のある型定義を設定します */,
 		// "lib": [],                                        /* 対象実行環境を記述するライブラリ定義ファイルのセットを指定します */
 		// "jsx": "preserve",                                /* 生成するJSXコードの種類を指定します */
 		// "experimentalDecorators": true,                   /* デコレータの実験的サポートを有効にします */
@@ -25,9 +25,9 @@
 		// "moduleDetection": "auto",                        /* モジュール形式のJSファイルを検出する方法を制御します */
 
 		/* モジュール設定 */
-		"module": "commonjs" /* 生成するモジュールコードの種類を指定します */,
+		"module": "ESNext" /* 生成するモジュールコードの種類を指定します */,
 		// "rootDir": "./",                                  /* ソースファイルのルートフォルダを指定します */
-		// "moduleResolution": "node10",                     /* TypeScriptがモジュール指定子からファイルを検索する方法を指定します */
+		"moduleResolution": "node" /* TypeScriptがモジュール指定子からファイルを検索する方法を指定します */,
 		// "baseUrl": "./",                                  /* 非相対パスのモジュール名を解決するためのベースディレクトリを指定します */
 		// "paths": {},                                      /* インポートの検索場所を再マップするためのエントリセットを指定します */
 		// "rootDirs": [],                                   /* モジュール解決時に複数のフォルダを1つとして扱うことを許可します */
@@ -46,7 +46,7 @@
 		// "noResolve": true,                                /* TypeScriptがプロジェクトに追加するファイル数を増やす'import'、'require'、'<reference>'の展開を禁止します */
 
 		/* JavaScript サポート */
-		// "allowJs": true,                                  /* JavaScriptファイルをプログラムの一部として使用することを許可します。'checkJS'オプションでこれらのファイルのエラーチェックが可能です */
+		"allowJs": true /* JavaScriptファイルをプログラムの一部として使用することを許可します。'checkJS'オプションでこれらのファイルのエラーチェックが可能です */,
 		// "checkJs": true,                                  /* JavaScriptファイルの型チェックによるエラー報告を有効にします */
 		// "maxNodeModuleJsDepth": 1,                        /* 'node_modules'からのJavaScriptファイルをチェックする際の最大フォルダ深度を指定します。'allowJs'との併用時のみ有効です */
 
@@ -54,11 +54,11 @@
 		// "declaration": true,                              /* プロジェクト内のTypeScriptとJavaScriptファイルから.d.tsファイルを生成します */
 		// "declarationMap": true,                           /* .d.tsファイルのソースマップを作成します */
 		// "emitDeclarationOnly": true,                      /* JavaScriptファイルを出力せず、.d.tsファイルのみを出力します */
-		// "sourceMap": true,                                /* 出力されるJavaScriptファイルのソースマップを作成します */
+		"sourceMap": true /* 出力されるJavaScriptファイルのソースマップを作成します */,
 		// "inlineSourceMap": true,                          /* 出力されるJavaScript内にソースマップを埋め込みます */
 		// "noEmit": true,                                   /* コンパイル時のファイル出力を無効にします */
 		// "outFile": "./",                                  /* すべての出力を1つのJavaScriptファイルにバンドルします。'declaration'がtrueの場合、すべての.d.ts出力も1つのファイルにまとめます */
-		// "outDir": "./",                                   /* 出力されるすべてのファイルの出力フォルダを指定します */
+		"outDir": "./dist" /* 出力されるすべてのファイルの出力フォルダを指定します */,
 		// "removeComments": true,                           /* コメントの出力を無効にします */
 		// "importHelpers": true,                            /* tslibのヘルパー関数をファイルごとに含めるのではなく、プロジェクトで1回だけインポートすることを許可します */
 		// "downlevelIteration": true,                       /* イテレーション用により互換性の高いが冗長で低パフォーマンスなJavaScriptを出力します */
