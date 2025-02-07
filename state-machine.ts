@@ -1,6 +1,8 @@
 import { setup } from "xstate";
 
-type ToggleEvent = { type: "toggle" };
+/* eslint-plugin-xstate-include */
+
+type ToggleEvent = { type: "TOGGLE" };
 
 export const toggleMachine = setup({
 	types: {} as {
@@ -9,16 +11,16 @@ export const toggleMachine = setup({
 }).createMachine({
 	/** @xstate-layout N4IgpgJg5mDOIC5QBcD2UoBswDoCSAdgIYDGyAlgG5gDEaG2A2gAwC6ioADqrORagQ4gAHogCMAVgAcOACxjZzAGwAmCQBoQAT3EBmFQF8Dm+llwBBMlVqmmbId179BSEeOlyFytZp0IpYjgSRsYgBKgQcEK2YA48fOQCQqIIALRKvojpRiboZvjEVtRxTokuoCmyKpn+AOxBUrpNzS1NOSAxOJYUxa6OCUmuKSpK9bVizACcurUa2oiTzDjMja1rIQZAA */
 	id: "toggle",
-	initial: "Inactive",
+	initial: "inactive",
 	states: {
-		Inactive: {
+		inactive: {
 			on: {
-				toggle: "Active",
+				TOGGLE: "active",
 			},
 		},
-		Active: {
+		active: {
 			on: {
-				toggle: "Inactive",
+				TOGGLE: "inactive",
 			},
 		},
 	},
