@@ -35,6 +35,7 @@ export const toggleMachine = setup({
 			},
 		},
 		active: {
+			entry: "incrementCount",
 			on: {
 				TOGGLE: "inactive",
 			},
