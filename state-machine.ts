@@ -8,10 +8,15 @@ type ToggleContext = {
 	count: number;
 };
 
+type ToggleInput = {
+	initialCount?: number;
+};
+
 export const toggleMachine = setup({
 	types: {} as {
 		context: ToggleContext;
 		events: ToggleEvent;
+		input: ToggleInput;
 	},
 	actions: {
 		incrementCount: assign({
@@ -22,9 +27,9 @@ export const toggleMachine = setup({
 	/** @xstate-layout N4IgpgJg5mDOIC5QBcD2UoBswDoCSAdgIYDGyAlgG5gDEaG2A2gAwC6ioADqrORagQ4gAHogCMAVgAcOACxjZzAGwAmCQBoQAT3EBmFQF8Dm+llwBBMlVqmmbId179BSEeOlyFytZp0IpYjgSRsYgBKgQcEK2YA48fOQCQqIIALRKvojpRiboZvjEVtRxTokuoCmyKpn+AOxBUrpNzS1NOSAxOJYUxa6OCUmuKSpK9bVizACcurUa2oiTzDjMja1rIQZAA */
 	id: "toggle",
 	initial: "inactive",
-	context: {
-		count: 0,
-	},
+	context: ({ input }) => ({
+		count: input.initialCount ?? 0,
+	}),
 	states: {
 		inactive: {
 			on: {

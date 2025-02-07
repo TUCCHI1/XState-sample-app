@@ -1,7 +1,11 @@
 import { createActor, type SnapshotFrom } from "xstate";
 import { toggleMachine } from "./state-machine";
 
-const actor = createActor(toggleMachine);
+const actor = createActor(toggleMachine, {
+	input: {
+		initialCount: 10,
+	},
+});
 
 actor.subscribe({
 	next: (snapshot: SnapshotFrom<typeof actor>) => {
