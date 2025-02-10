@@ -41,6 +41,7 @@ export const toggleMachine = setup({
 			on: {
 				TOGGLE: {
 					guard: "isLessThanMaxCount",
+					actions: "incrementCount",
 					target: "active",
 				},
 			},
