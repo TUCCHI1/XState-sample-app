@@ -4,6 +4,7 @@ import { toggleMachine } from "./state-machine";
 const actor = createActor(toggleMachine, {
 	input: {
 		initialCount: 10,
+		maxCount: 11,
 	},
 });
 
