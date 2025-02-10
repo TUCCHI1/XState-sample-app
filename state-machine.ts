@@ -6,10 +6,12 @@ type ToggleEvent = { type: "TOGGLE" };
 
 type ToggleContext = {
 	count: number;
+	maxCount: number;
 };
 
 type ToggleInput = {
 	initialCount?: number;
+	maxCount: number;
 };
 
 export const toggleMachine = setup({
@@ -23,12 +25,16 @@ export const toggleMachine = setup({
 			count: ({ context }) => context.count + 1,
 		}),
 	},
+	guards: {
+		isLessThanMaxCount: ({ context }) => context.count < context.maxCount,
+	},
 }).createMachine({
 	/** @xstate-layout N4IgpgJg5mDOIC5QBcD2UoBswDoCSAdgIYDGyAlgG5gDEaG2A2gAwC6ioADqrORagQ4gAHogCMAVgAcOACxjZzAGwAmCQBoQAT3EBmFQF8Dm+llwBBMlVqmmbId179BSEeOlyFytZp0IpYjgSRsYgBKgQcEK2YA48fOQCQqIIALRKvojpRiboZvjEVtRxTokuoCmyKpn+AOxBUrpNzS1NOSAxOJYUxa6OCUmuKSpK9bVizACcurUa2oiTzDjMja1rIQZAA */
 	id: "toggle",
 	initial: "inactive",
 	context: ({ input }) => ({
 		count: input.initialCount ?? 0,
+		maxCount: input.maxCount,
 	}),
 	states: {
 		inactive: {
