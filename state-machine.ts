@@ -40,6 +40,7 @@ export const toggleMachine = setup({
 		inactive: {
 			on: {
 				TOGGLE: {
+					guard: "isLessThanMaxCount",
 					target: "active",
 				},
 			},
