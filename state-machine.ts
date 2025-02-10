@@ -47,15 +47,6 @@ export const toggleMachine = setup({
 			},
 		},
 		active: {
-			entry: [
-				() => {
-					console.log("entry's actions started");
-				},
-				"incrementCount",
-				() => {
-					console.log("entry's actions ended");
-				},
-			],
 			on: {
 				TOGGLE: "inactive",
 			},
